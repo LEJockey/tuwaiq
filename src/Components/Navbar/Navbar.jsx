@@ -130,25 +130,25 @@ const Navbar = () => {
 
             <ul className="navbar-nav justify-content-end flex-grow-1">
                 
-                <li className="nav-item">
+                <li className="nav-item" data-bs-dismiss="offcanvas">
 
                     <NavLink  className="nav-link " aria-current="page" to=" ">HOME</NavLink>
 
                 </li>
 
-                <li className="nav-item">
+                <li className="nav-item" data-bs-dismiss="offcanvas">
 
                     <NavLink className="nav-link" to="about">ABOUT US</NavLink>
 
                 </li>
 
-                <li className="nav-item">
+                <li className="nav-item" data-bs-dismiss="offcanvas">
 
                     <NavLink className="nav-link" to="products">OUR SERVICES</NavLink>
 
                 </li>
 
-                <li className="nav-item">
+                <li className="nav-item" data-bs-dismiss="offcanvas">
 
                     <NavLink className="nav-link" to="projects">OUR Projects</NavLink>
 
@@ -165,20 +165,20 @@ const Navbar = () => {
                 </span>
                     
                     <ul className="dropdown-menu">
-                        <li><Link className="dropdown-item" to="photos">Photos</Link></li>
+                        <li data-bs-dismiss="offcanvas"><Link className="dropdown-item" to="photos">Photos</Link></li>
                         <li><hr className="dropdown-divider"/></li>
-                        <li><Link className="dropdown-item" to="videos">Videos</Link></li>
+                        <li data-bs-dismiss="offcanvas"><Link className="dropdown-item" to="videos">Videos</Link></li>
                     </ul>
                 </li>
 
 
-                <li className="nav-item">
+                <li className="nav-item" data-bs-dismiss="offcanvas">
 
                     <NavLink className="nav-link" to="blog">BLOG</NavLink>
 
                 </li>
 
-                <li className="nav-item">
+                <li className="nav-item" data-bs-dismiss="offcanvas">
 
                     <NavLink className="nav-link" to="contactus">CONTACT US</NavLink>
 
