@@ -1,0 +1,14 @@
+.clients{
+    background-image: url(../../assests/bg-decoration.jpg);
+    background-size: cover; 
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.small-height{
+    height: 15vh;
+}
+
+.clients .Border {
+    border: 2px solid var(--goldheadBG);
+  }

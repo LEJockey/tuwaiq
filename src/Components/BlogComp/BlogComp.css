@@ -1,0 +1,22 @@
+.blog-home{
+    background-image: url(../../assests/home/bg-decoration.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: var(--mainColor);  
+}
+
+.blog-home .card-img{
+    height: 16rem !important;
+}
+
+.blog-home .card-title h3{
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--secondColor);
+}
+.blog-home .card-title p{
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--secondColor);
+}

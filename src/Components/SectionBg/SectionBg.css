@@ -1,0 +1,63 @@
+.section-bg{
+    position: relative;
+    background-repeat: no-repeat;
+    background-image: url(../../assests/logo-navbar.png);
+    background-size: 100% 100%;
+    background-position: 50% 50%;
+    background-attachment: scroll;
+    width: 100%;
+    height: 70vh;
+}
+  
+.overlay-custom{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    opacity: 0.3;
+    background-color: var(--secondColor);
+    background-image: url(../../assests/dots-mini-light.png);
+    background-repeat: repeat;
+  }
+  
+  .section-bg .section-content{
+    height: 500px;
+    padding: 88px 50px 0 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .section-bg .section-content .section-head{
+    padding: 50px 0;
+    z-index: 5;
+    color: var(--goldheadBG);
+  }
+  
+  .section-bg .section-head h1{
+    font-size: 6rem;
+    font-weight: 900;
+    margin-bottom: 27.5rem;
+    letter-spacing: 1px;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .section-bg .section-head h1{
+      font-size: 4rem;
+      margin-bottom: 26.2rem;
+    }
+  }
+  @media screen and (max-width: 576px) {
+    .section-bg .section-head h1{
+      font-size: 3rem;
+      margin-bottom: 25.5rem;
+    }
+  }
+
+  @media screen and (max-width: 509px) {
+    .section-bg .section-head h1{
+      font-size: 2.75rem;
+      margin-bottom: 29rem;
+    }
+  }

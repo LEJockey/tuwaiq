@@ -1,0 +1,104 @@
+/* ======Carousel Section Handling====== */
+main{
+    overflow-x: hidden;
+    overflow-y: clip;
+}
+
+main .section-bg{
+    display: none;
+}
+#carouselExampleFade{
+    height: 70vh !important;
+}
+
+#carouselExampleFade .carousel-caption{
+    top: 0;
+    left: 20%;
+    right: 20%;
+    bottom: 0;
+}
+
+#carouselExampleFade .carousel-caption h1{
+    font-size: 2.5rem;
+    font-weight: 900;
+    text-align: center;
+    line-height: 2.25rem;
+    margin-bottom: 2rem;
+    letter-spacing: .1875rem;
+    opacity: 0;
+    transform: translateY(-70%);
+    color: var(--whiteColor);
+    text-transform: uppercase;
+    transition: all .5s;
+}
+
+#carouselExampleFade .carousel-caption p{
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    text-align: center;
+    margin: .4rem 0;
+    opacity: 0;
+    transform: translateY(70%);
+    transition: all .5s;
+}
+
+#carouselExampleFade .carousel-caption button:hover .carousel-caption button::before{
+    right: 0;
+}
+
+#carouselExampleFade .carousel-caption button{
+    opacity: 0;
+    transform: translateY(70%);
+}
+
+/* Carousel animations Control */
+#carouselExampleFade .active .carousel-caption h1, 
+#carouselExampleFade .active .carousel-caption p, 
+#carouselExampleFade .active .carousel-caption button{
+    transform: translateY(0%);
+    opacity: 1;
+}
+
+#carouselExampleFade .carousel-indicators [data-bs-target] {
+    opacity: 0;
+    width: 13.5px;
+    height: 13.5px;
+    background-color: var(--secondColor);
+}
+
+
+#carouselExampleFade .carousel-indicators .active {
+    background-color: var(--mainColor) !important;
+}
+
+#carouselExampleFade:hover .carousel-indicators [data-bs-target] {
+        opacity: 1 !important;
+}
+
+#carouselExampleFade .carousel-item img{
+    transition: all 5s ease-in-out !important;
+}
+
+#carouselExampleFade .carousel-item.active img{
+    transform: scale(1.15) !important;
+}
+
+/* ======About Section Handling====== */
+
+/* ======Services Section Handling====== */
+.service-home .service-img{
+    width: 6rem;
+    height: 6rem;
+}
+
+.service-home .service-desc h3{
+    font-weight: 700;
+    font-size: 1.5rem;
+    line-height: 1.75rem;
+    color: var(--secondColor);
+}
+
+
+
+
+

@@ -1,0 +1,33 @@
+
+
+/* Why Us Section */
+.why-us{
+    background-color: var(--secondColor);
+}
+.why-us .custom-head::before, .our-team .custom-head::before{
+    display: none;
+}
+.why-us img{
+    width: 80px !important;
+    height: 80px !important;
+}
+.why-us h2{
+    font-weight: 700;
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+}
+.why-us p{
+    font-size: 16px;
+    color: rgb(156 163 175);
+}
+
+/* Our Team Section */
+.our-team .team-card h2{
+    font-weight: 700;
+    line-height: 2rem;
+}
+.our-team .team-card h4{
+    font-weight: 600;
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+}

@@ -1,0 +1,11 @@
+.service-home .service-img{
+    width: 6rem;
+    height: 6rem;
+}
+
+.service-home .service-desc h3{
+    font-weight: 700;
+    font-size: 1.5rem;
+    line-height: 1.75rem;
+    color: var(--secondColor);
+}
