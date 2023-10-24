@@ -18,7 +18,7 @@ const BlogComp = ({ title='', className= '', location= ''}) => {
       <div className="overlay opacity-25"></div>
       <div className="container text-center">
         <h1> <span className='custom-head'>{title}</span> </h1>
-        <div className="row mt-5">
+        <div className="row mt-5 gy-lg-0 gy-4">
           {homeBlog.map(({img, desc, dur}, idx) => 
             <div className="col-md-6 col-lg-3" key={idx}>
               <div className="blog-card p-2 rounded bg-white">

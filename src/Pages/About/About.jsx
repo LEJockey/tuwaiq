@@ -36,10 +36,13 @@ const About = () => {
                 {/* Why Us Description */}
                 <p className= 'text-center main-desc mt-3'> {langs[lang].AboutUS.desc} </p>
 
-                <div className="row mt-5">
+                
+            </div>
+
+            <div className="row mt-5 gy-lg-0 gy-4">
                   {whyUs.map(({img, title, desc}, idx) =>
 
-                  <div className="col-md-3" key={idx}>
+                  <div className="col-lg-3 col-md-6" key={idx}>
                     <div className="whyus-card Border shadowing rounded h-100 text-center p-3">
                       
                       {/* Image */}
@@ -53,7 +56,6 @@ const About = () => {
                     </div>
                   </div>
                   )}
-                </div>
             </div>
         </div>
     </section>
