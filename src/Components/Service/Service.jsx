@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import './Service.css'
 import service1 from '../../assests/home/services/1-design.png'
 import service2 from '../../assests/home/services/2-guarantee.png'

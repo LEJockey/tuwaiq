@@ -1,13 +1,10 @@
 import React from 'react'
 import './Home.css'
-import { Link } from 'react-router-dom'
 import slide1 from '../../assests/home/main-slider/1-.jpg'
 import slide2 from '../../assests/home/main-slider/2-.jpeg'
 import slide3 from '../../assests/home/main-slider/3-.jpeg'
 
 import ContactForm from '../../Components/ContactForm/ContactForm'
-import Photos from '../Photos/Photos'
-import Videos from '../Videos/Videos'
 import GoldHead from '../../Components/GoldHead/GoldHead'
 import DakHead from '../../Components/DarkHead/DakHead'
 import FacadeDesign from '../../Components/FacadeDesign/FacadeDesign'
@@ -18,11 +15,20 @@ import Service from '../../Components/Service/Service'
 import ImageComp from '../../Components/ImageComp/ImageComp'
 import PhotoComp from '../../Components/PhotoComp/PhotoComp'
 import VideoComp from '../../Components/VideoComp/VideoComp'
+import useLangContext from '../../Hooks/useLangContext'
+import SiteHelmet from '../../Components/SiteHelemt/SiteHelmet'
+
 
 const Home = () => {
+
+  const {lang, langs} = useLangContext()
+
+
 return (
 
-<main>
+  
+  <main>
+  <SiteHelmet title={langs[lang].Titles.hometitle}/>
       
       {/* Carousel Section */}
   <section id="carouselExampleFade" className="carousel slide carousel-fade z-1 custom-padding"  data-bs-ride="carousel" >
@@ -43,7 +49,6 @@ return (
 
       <div className="overlay z-2"></div>
         
-        {/* <img src={slide1} className="d-block w-100 h-100" alt="Guarntee"/> */}
         <ImageComp src={slide1} alt='Guarntee' />
         <div className="carousel-caption d-flex justify-content-center align-items-center z-3">
 
@@ -52,8 +57,6 @@ return (
 
               <h1>A guarantee</h1>
               <p>Guarantee on our product Your trust is important to us</p>
-              {/* <button className='custom-btn mt-4'>Diimport ImageComp from './../../Components/ImageComp/ImageComp';
-scover more</button> */}
               
           </div>
 
@@ -64,7 +67,6 @@ scover more</button> */}
       {/* Slide 2 */}
       <div className="carousel-item h-100 position-relative" data-bs-slide="fade" data-bs-interval="5000">
 
-      {/* <img src={slide2} className="d-block w-100 h-100 slide" alt="Installation"/> */}
       <ImageComp src={slide2} alt='Installation' />
       <div className="overlay z-2"></div>
 
@@ -74,7 +76,6 @@ scover more</button> */}
 
             <h1>Install</h1>
             <p>We provide installation and supply of natural stone for palaces, villas and buildings.</p>
-            {/* <button className='custom-btn mt-4'>Discover more</button> */}
 
           </div>
 
@@ -87,7 +88,6 @@ scover more</button> */}
 
       <div className="overlay z-2"></div>
         
-        {/* <img src={slide3} className="d-block w-100 h-100 slide" alt="Design"/> */}
         <ImageComp src={slide3} alt='Design' />
 
         <div className="carousel-caption d-flex justify-content-center align-items-center z-3">
@@ -96,7 +96,6 @@ scover more</button> */}
 
             <h1>Design</h1>
             <p>We prepare designs according to the appropriate sizes</p>
-            {/* <button className='custom-btn mt-4'>Discover more</button> */}
 
           </div>
 
@@ -116,27 +115,27 @@ scover more</button> */}
       {/* Photo home Section */}
       <PhotoComp location='photos'/>
 
-      <GoldHead title = 'Types of Natural Stones' location= 'https://www.almrsal.com/post/1082985'/>
+      <GoldHead title ={langs[lang].Titles.TypesofNaturalStones} location= 'https://www.almrsal.com/post/1082985'/>
 
       {/* Video home Section */}
       <VideoComp location='videos'/>
 
-      <DakHead title= 'External Facade Designs'/>
+      <DakHead title= {langs[lang].Titles.ExternalFacadeDesigns}/>
 
       {/* Facade Design */}
       <FacadeDesign location='projects'/>
       
       {/* Services */}
-      <Service title='Services'/>
+      <Service title= {langs[lang].Titles.Services} />
 
       {/* Clients Section */}
       <Clients/>
 
-      <GoldHead title= 'Learn more about the factory'/>
+      <GoldHead title= {langs[lang].Titles.Learnmoreaboutthefactory}/>
 
 
       {/* Blog Home Section */}
-      <BlogComp location='blog'/>
+      <BlogComp title={langs[lang].Titles.Blog} location='blog'/>
 
   
       {/* Contact Section */}

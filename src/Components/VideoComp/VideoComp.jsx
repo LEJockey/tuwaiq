@@ -5,8 +5,12 @@ import { Link } from 'react-router-dom'
 import { Fancybox } from "@fancyapps/ui";
 import { manufactureImg } from '../../data';
 import ImageComp from '../ImageComp/ImageComp';
+import useLangContext from '../../Hooks/useLangContext';
 
 const VideoComp = ({className='', location=''}) => {
+
+    const {lang, langs} = useLangContext()
+
 
     Fancybox.bind("[data-fancybox]", {
         
@@ -54,7 +58,7 @@ const VideoComp = ({className='', location=''}) => {
 
         <div className="container px-5">
 
-            <h1 className='text-center mb-5'><span className='custom-head'>Videos of the manufacturing process</span> </h1>
+            <h1 className='text-center mb-5'><span className='custom-head'>{langs[lang].Titles.Videosofthemanufacturingprocess}</span> </h1>
         
             <div className="row">
                 <Slider {...settings}>
@@ -79,10 +83,10 @@ const VideoComp = ({className='', location=''}) => {
 
             </div>
 
-            <div className={`text-end px-2 mt-3 ${className}`}>
-                <button className='btn main-bg text-white rounded'>
+            <div className='d-flex justify-content-end px-2 mt-3'>
+                <button className={`btn main-bg text-white rounded ${className} `}>
                     <Link className=' text-decoration-none text-white' to= {location} >
-                        Discover More
+                        {langs[lang].Buttons.discover}
                     </Link>
                 </button>
             </div>

@@ -1,7 +1,13 @@
 import React from 'react'
 import './ContactForm.css'
+import useLangContext from '../../Hooks/useLangContext'
+
 
 const ContactForm = () => {
+
+    const {lang, langs} = useLangContext()
+
+    
   return (
     <section className="row mx-0">
         <div className="col-md-6 map px-0">
@@ -19,41 +25,55 @@ const ContactForm = () => {
 
         <div className="col-md-6 touch">
 
-            <h1 className=' position-relative'>GET IN TOUCH</h1>
+            <h1 className=' position-relative'>{langs[lang].ContactForm.touch}</h1>
 
             <form className='row' action="">
 
                 {/* Name Input */}
-                <div className="form-floating my-2 col-sm-6 px-sm-1 ps-sm-0 px-0">
+                <div className="form-floating my-2 col-sm-6 px-sm-1 px-0">
                     <input type="text" className="form-control" id="floatingName" placeholder="Name" required/>
-                    <label className='mx-2' htmlFor="floatingName">Name*</label>
+                    {/* Label */}
+                    <label className={`mx-2 ${lang === 'ar' ? ' end-0' : 'start-0'}`}
+                    htmlFor="floatingName"
+                    >
+                    {langs[lang].ContactForm.name}
+                    </label>
                 </div>
                 
                 {/* Email Imput */}
-                <div className="form-floating my-2 col-sm-6 px-sm-1 pe-sm-0 px-0">
+                <div className="form-floating my-2 col-sm-6 px-sm-1 px-0">
                     <input type="Email" className="form-control" id="floatingEmail" placeholder="Email" required/>
-                    <label className='mx-2' htmlFor="floatingEmail">Email*</label>
+                    {/* Label */}
+                    <label className={`mx-2 ${lang === 'ar' ? ' end-0' : 'start-0'}`}
+                    htmlFor="floatingEmail"
+                    >
+                    {langs[lang].ContactForm.email}
+                    </label>
                 </div>
                 
                 {/* Phone Input */}
-                <div className="form-floating my-2 col-12 px-0">
+                <div className="form-floating my-2 col-12 px-0 px-sm-1">
                     <input type="phone" className="form-control" id="floatingPhone" placeholder="Phone"/>
-                    <label htmlFor="floatingPhone">Phone*</label>
+                    {/* Label */}
+                    <label className={`mx-2 ${lang === 'ar' ? ' end-0' : 'start-0'}`} 
+                    htmlFor="floatingPhone"
+                    >
+                    {langs[lang].ContactForm.phone}
+                    </label>
                 </div>
 
                 {/* Message Input */}
-                <div className="form-floating my-2 col-12 px-0">
+                <div className="form-floating my-2 col-12 px-0 px-sm-1">
                     <textarea className="form-control" placeholder="Leave your message here" id="floatingTextarea" cols={40} ></textarea>
-                    <label htmlFor="floatingTextarea">Message*</label>
+                    <label className={`mx-2 ${lang === 'ar' ? ' end-0' : 'start-0'}`} 
+                    htmlFor="floatingTextarea"
+                    >
+                    {langs[lang].ContactForm.message}
+                    </label>
                 </div>
                 
-                    {/* <label for="formFile" class="form-label"></label> */}
-                {/* <div className="my-2 px-0">
-                    <input className="form-control upload-input" type="file" id="formFile"/>
-                </div> */}
-
-                <div className="col-12 px-0 mt-3 mb-5">
-                    <button className='custom-btn z-1' type="submit">Submit</button>
+                <div className="col-12 px-0 px-sm-1 mt-3 mb-5">
+                    <button className='custom-btn z-1' type="submit">{langs[lang].ContactForm.submit}</button>
                 </div>
 
             </form>

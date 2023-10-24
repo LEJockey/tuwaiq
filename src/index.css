@@ -167,6 +167,15 @@ img{
   transform: translateX(0%);
 }
 
+html[dir='rtl'] .custom-btn::before{
+  transform: translateX(100%) !important;
+}
+
+html[dir='rtl'] .custom-btn:hover::before{
+  transform: translateX(0%) !important;
+}
+
+
 /* Handle Img, H1 of every background */
 .custom-title{
   font-weight: 900;
@@ -297,6 +306,27 @@ img{
 /* Custom Show Link */
 .show-link{
   display: block !important;
+}
+
+/* Handling position of Wifi Off Icon */
+.custom-position{
+  position: fixed !important;
+  bottom: 2%;
+  width: 100%;
+  margin: 0 -10px !important;
+  z-index: 99999999 !important;
+}
+.networkStatus {
+  animation: fade-in 2s infinite alternate;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 100;
+  }
 }
 
 

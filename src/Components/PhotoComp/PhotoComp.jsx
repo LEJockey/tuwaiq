@@ -3,8 +3,12 @@ import Slider from "react-slick";
 import { Link } from 'react-router-dom';
 import { manufactureImg } from '../../data';
 import ImageComp from '../ImageComp/ImageComp';
+import useLangContext from '../../Hooks/useLangContext';
 
 const PhotoComp = ({className= '', location= ''}) => {
+
+    const {lang, langs} = useLangContext()
+
     
     const settings = {
         infinite: true,
@@ -48,7 +52,7 @@ const PhotoComp = ({className= '', location= ''}) => {
 
         <div className="container px-5">
 
-            <h1 className='text-center mb-5'><span className='custom-head'>Images of the manufacturing process</span> </h1>
+            <h1 className='text-center mb-5'><span className='custom-head'>{langs[lang].Titles.Imagesofthemanufacturingprocess}</span> </h1>
         
             <div className="row">
                 
@@ -59,19 +63,11 @@ const PhotoComp = ({className= '', location= ''}) => {
                 <div className='col-4 px-2' key={idx}>
 
                     <div className="custom-height position-relative shadowing rounded overflow-hidden Border">
-                {/* <img
-                className="w-100 h-100"
-                // height={250}
-                src={img}
-                alt= 'Manufacturing Images'
-                /> */}
+                
                         <ImageComp  src={img}alt= 'Manufacturing Images' />
-
-                {/* <div className="overlay-img">
-                    <HiOutlineViewfinderCircle className='icon z-3'/>
-                  </div> */}
                 
                     </div>
+                    
                 </div>
                 ))}
                 
@@ -79,10 +75,10 @@ const PhotoComp = ({className= '', location= ''}) => {
 
             </div>
 
-            <div className= {`text-end px-2 mt-3 ${className}`}>
-                <button className='btn main-bg text-white rounded'>
+            <div className= 'd-flex justify-content-end px-2 mt-3'>
+                <button className={`btn main-bg text-white rounded ${className} `}>
                     <Link className=' text-decoration-none text-white'  to= {location} >
-                        Discover More
+                        {langs[lang].Buttons.discover}
                     </Link>
                 </button>
             </div>

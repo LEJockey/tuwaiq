@@ -4,9 +4,13 @@ import { Link } from 'react-router-dom'
 import {HiOutlineViewfinderCircle} from 'react-icons/hi2'
 import { Fancybox } from "@fancyapps/ui";
 import ImageComp from '../ImageComp/ImageComp';
+import useLangContext from '../../Hooks/useLangContext';
 
 
 const FacadeDesign = ({className='', location=''}) => {
+    
+    const {lang, langs} = useLangContext()
+
     
     Fancybox.bind("[data-fancybox]", {
         
@@ -23,8 +27,8 @@ return (
                 {facadeDesign.map(({img}, idx)=>
                     <div className="col-sm-6 col-md-4 col-lg-3 mb-4" key={idx}>
                         <a href={img} className='overlay-link' data-fancybox="gallery" data-caption="Facade Designs">
-                        <div className='custom-height position-relative shadowing rounded overflow-hidden Border cursor  z-1'>
-                            {/* <img className='w-100 h-100 scale-img' src={img} alt="" /> */}
+                        <div className='custom-height position-relative shadowing rounded overflow-hidden Border cursor z-1'>
+
                             <ImageComp src={img} alt="Facade Designs"/>
                             <div className="overlay-img">
                                 <HiOutlineViewfinderCircle className='icon z-3'/>
@@ -36,10 +40,10 @@ return (
             </div>
 
 
-            <div className={`text-end mt-3 ${className}`} >
-                <button className='btn main-bg text-white rounded'>
+            <div className='d-flex justify-content-end mt-3' >
+                <button className={`btn main-bg text-white rounded ${className} `}>
                     <Link className=' text-decoration-none text-white'  to= {location} >
-                        Discover More
+                        {langs[lang].Buttons.discover}
                     </Link>
                 </button>
             </div>

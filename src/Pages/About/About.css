@@ -7,6 +7,12 @@
 .why-us .custom-head::before, .our-team .custom-head::before{
     display: none;
 }
+
+.why-us .main-desc{
+    font-weight: 600;
+    color: var(--mainColor);
+}
+
 .why-us img{
     width: 80px !important;
     height: 80px !important;

@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import goldlogo from '../../assests/logo.png'
+import goldlogo from '../../assests/logo-navbar.png'
 import { Link } from 'react-router-dom';
 
 const GoldHead = ({title, location = ''}) => {

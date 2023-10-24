@@ -14,6 +14,8 @@ import Photos from './Pages/Photos/Photos';
 import Videos from './Pages/Videos/Videos';
 import { SkeletonTheme } from 'react-loading-skeleton';
 import Clients from './Pages/Clients/Clients';
+import LangContextProvider from './Context/LangContext';
+// import Dashboard from './Dashboard/Dashboard';
 const LazyAbout = React.lazy(() => import ('./Pages/About/About'));
 const LazyProjects = React.lazy(() => import ('./Pages/Projects/Projects'))
 const LazyNaturalStone = React.lazy(() => import ('./Pages/NaturalStone/NaturalStone'))
@@ -38,12 +40,18 @@ const App = () => {
       {path: 'clients', element: <Clients/>},
       {path: 'naturalstone', element: <React.Suspense> <LazyNaturalStone/> </React.Suspense>},
       {path: '*', element: <NotFound/>}
-  ]}])
+  ]},
+  // {path: 'dashboard', element: <Dashboard/>}
+])
   return (
     <>
-    <SkeletonTheme baseColor="#C6A467" highlightColor="#B86C0C">
-    <RouterProvider router={router}/>
-    </SkeletonTheme>
+    <LangContextProvider>
+
+      <SkeletonTheme baseColor="#C6A467" highlightColor="#B86C0C">
+          <RouterProvider router={router}/>
+      </SkeletonTheme>
+
+    </LangContextProvider>
     </>
   )
 }

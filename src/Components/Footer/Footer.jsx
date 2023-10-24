@@ -2,10 +2,15 @@ import React from 'react'
 import './Footer.css'
 import logo from '../../assests/logo.png'
 import { Link } from 'react-router-dom';
+import useLangContext from '../../Hooks/useLangContext';
 
 
 
 const Footer = () => {
+
+  const {lang, langs} = useLangContext()
+
+
   return (
     <footer>
     
@@ -28,27 +33,28 @@ const Footer = () => {
               <div className="widget">
                   {/* <h5></h5> */}
                   <div className="textwidget w-75">
-                      <p className='my-0'>Installation and supply of natural stone for palaces, villas and buildings - we prepare designs according to the appropriate dimensions of the natural stone facades We provide all types of natural stone with the latest methods used and guaranteed.</p>
+                      <p className='my-0'>{langs[lang].Footer.desc}</p>
                   </div>
               </div>
           </div>
           
           <div className="col-lg-4 col-md-6 mb-3 mb-lg-0">
               <div className="widget">
-                  <h5>Useful Links</h5>
-                  <ul className="footer-menu list-unstyled">
-                      <li><Link className='d-inline-block' to="about">About Us</Link></li>
-                      <li><Link className='d-inline-block' to="products">Services</Link></li>
-                      <li><Link className='d-inline-block' href="">News</Link></li>
-                      <li><Link className='d-inline-block' to="blog">Blog</Link></li>
-                      <li><Link className='d-inline-block' to="clients">Our Clients</Link></li>
+                  <h5>{langs[lang].Footer.UsefulLinks}</h5>
+                  <ul className={`footer-menu list-unstyled ${lang === 'ar' && ' px-0'}`}>
+                    
+                      <li><Link className='d-inline-block' to="about">{langs[lang].Footer.AboutUs}</Link></li>
+                      <li><Link className='d-inline-block' to="products">{langs[lang].Footer.services}</Link></li>
+                      {/* <li><Link className='d-inline-block' to="">News</Link></li> */}
+                      <li><Link className='d-inline-block' to="blog">{langs[lang].Titles.Blog}</Link></li>
+                      <li><Link className='d-inline-block' to="clients">{langs[lang].Titles.OurClients}</Link></li>
                   </ul>
               </div>
           </div>
 
           <div className="col-lg-4 col-md-6 mb-3 mb-lg-0">
               <div className="widget">
-                  <h5>Contact Info</h5>
+                  <h5>{langs[lang].Footer.ContactInfo}</h5>
                   <div className="textwidget">
                       <p>Riyadh 15228,<br/> Saudi Arabia</p>
                       <p> 0544440399<br/>

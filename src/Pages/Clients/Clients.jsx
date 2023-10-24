@@ -5,11 +5,15 @@ import { ourClients } from '../../data';
 import { Link } from 'react-router-dom';
 import ImageComp from '../../Components/ImageComp/ImageComp';
 import SectionBg from '../../Components/SectionBg/SectionBg';
+import useLangContext from '../../Hooks/useLangContext';
+import SiteHelmet from './../../Components/SiteHelemt/SiteHelmet';
 
 
 
 
 const Clients = () => {
+
+    const {lang, langs} = useLangContext()
 
     const settings = {
         infinite: true,
@@ -56,12 +60,14 @@ const Clients = () => {
     }
 return (
     <>
+    
+    <SiteHelmet title= {langs[lang].Titles.clientstitle}/>
     <SectionBg title= 'Our Clients'/>
 
     <section className='clients py-5'>
         <div className="container">
 
-            <h1 className='text-center mb-5'> <span className='custom-head'>Our Clients</span> </h1>
+            <h1 className='text-center mb-5'> <span className='custom-head'>{langs[lang].Titles.OurClients}</span> </h1>
 
             <div className="row px-5">
                 <Slider {...settings}>

@@ -23,5 +23,15 @@
     height: 100%;
 }
 
-/* Why Us Section */
+@media screen and (max-width: 392px) {
+    .about-home .about-btns {
+        flex-wrap: wrap;
+    }
+    .about-home .about-btns button{
+        width: 50%;
+        margin: 4px 0;
+    }
+}
+
+
 

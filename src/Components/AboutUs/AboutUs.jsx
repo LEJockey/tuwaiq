@@ -4,7 +4,11 @@ import {FaPlay} from 'react-icons/fa'
 import { Link } from 'react-router-dom'
 import aboutImg from '../../assests/home/about-home.png'
 import ImageComp from '../ImageComp/ImageComp'
+import useLangContext from '../../Hooks/useLangContext'
 const AboutUs = ({className= '',location= ''}) => {
+
+    const {lang, langs} = useLangContext()
+    
   return (
     <section className='about-home position-relative py-5'>
 
@@ -13,8 +17,10 @@ const AboutUs = ({className= '',location= ''}) => {
             <div className="col-md-6 d-flex justify-content-center align-items-center text-center px-5">
                 
                 <div>
-            
-                    <h1 className='text-center mb-5'> <span className='custom-head'>About US</span> </h1>
+                    {/* About Us Title */}
+                    <h1 className='text-center mb-5'> <span className='custom-head'>{langs[lang].AboutUS.aboutTitle}</span> </h1>
+
+                    {/* About Us Desc */}
                     <p className=' text-center'>
                         
                         Tuwaiq Industrial Factory extracts, cuts and shapes natural stone used in building and construction through several processes starting from
@@ -23,29 +29,36 @@ const AboutUs = ({className= '',location= ''}) => {
                         We offer them natural stones that are distinguished by their quality, shape and distinctive design
             
                     </p>
-
-                    <div className='d-flex justify-content-around'>
-
+                    
+                    {/* Buttons */}
+                    <div className='d-flex justify-content-around about-btns'>
+                        
+                        {/* Discover More Button */}
                         <button className={`btn main-bg text-white rounded mx-2 hide-btn ${className}`}>
                             <Link className=' text-decoration-none text-white'  to= {location} >
-                            Discover More
+                                {langs[lang].Buttons.discover}
                             </Link>
                         </button>
-
+                        
+                        {/* Download Profile Link */}
                         <button className='btn navy-bg text-white rounded mx-2'>
-                            <a className=' text-decoration-none text-white' href=" " download=''>
-                            Download Proflie
+                            <a className=' text-decoration-none text-white' 
+                            href=" " 
+                            target= '_blank'
+                            rel= 'noreferrer'   
+                            download=''>
+                                {langs[lang].Buttons.download}
                             </a> 
                         </button>
 
                     </div>
                 </div>
             </div>
-        
+            
+            {/* About Us Image */}
             <div className="col-md-6 d-flex justify-content-center align-items-center mt-4 mt-md-0">
                 <Link className='overlay-link'>
                     <div className='p-3 position-relative shadowing z-1 bg-white rounded overflow-hidden'>
-                        {/* <img className='w-100 h-100' src={aboutImg} alt="About US" /> */}
                         <ImageComp src={aboutImg} alt= 'About US' />
                         <div className="overlay-img">
                             <FaPlay className='icon z-3'/>

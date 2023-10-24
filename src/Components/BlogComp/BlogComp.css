@@ -10,13 +10,20 @@
     height: 16rem !important;
 }
 
-.blog-home .card-title h3{
+.blog-home .card-title h3 .blog-title{
     font-size: 1.5rem;
     font-weight: 700;
     color: var(--secondColor);
 }
-.blog-home .card-title p{
+.blog-home .card-title p .blog-desc{
     font-size: 1rem;
     font-weight: 400;
     color: var(--secondColor);
 }
+
+@media screen and (max-width: 390px) {
+    .blog-home .view-blogs a{
+        width: 60%;
+    }   
+}
+

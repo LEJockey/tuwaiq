@@ -48,13 +48,15 @@ nav{
     }
 }
 
-/* .nav-bar .container{
-    flex-direction: column !important;
-} */
-/* @media screen and (max-width: 509px) {
-    
-    
-} */
+@media screen and (max-width:410px) {
+    .contact-part a{
+        display: flex !important;
+    }
+    .contact-part a svg{
+        margin-bottom: 8px !important;
+    }
+}
+
 
 /* ====================================================== */
 nav .navbar-brand img{
