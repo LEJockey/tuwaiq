@@ -32,8 +32,8 @@ const Layout = () => {
                 <span
                 className="networkStatus alert alert-danger d-flex justify-content-center"
                 >
-                    <div>{langs[lang].Titles.connect} &ensp</div>
-                    <div> <FiWifiOff /> </div>
+                    <div className='mx-2'>{langs[lang].Titles.connect}</div>
+                    <div className='mx-1'> <FiWifiOff className='mb-1' /> </div>
                 
                 </span>
             </div>
