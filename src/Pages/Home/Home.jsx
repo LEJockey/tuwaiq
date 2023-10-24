@@ -28,7 +28,7 @@ return (
 
   
   <main>
-  <SiteHelmet title={langs[lang].Titles.hometitle}/>
+  <SiteHelmet title={langs[lang].Titles.home}/>
       
       {/* Carousel Section */}
   <section id="carouselExampleFade" className="carousel slide carousel-fade z-1 custom-padding"  data-bs-ride="carousel" >

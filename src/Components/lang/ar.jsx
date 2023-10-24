@@ -29,7 +29,7 @@ export const ar = {
         OurClients:'عملائنا',
         Learnmoreaboutthefactory: 'تعرف اكثر على مصنعنا',
         Blog: 'المدونه',
-        hometitle: 'طويق',
+        home: 'طويق',
         abouttitle: 'من طويق',
         blogtitle: 'مدونه طويق',
         clientstitle: 'عملاء طويق',

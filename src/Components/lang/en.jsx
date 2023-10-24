@@ -27,7 +27,7 @@ export const en = {
         OurClients:'Our Clients',
         Learnmoreaboutthefactory: 'Learn more about our factory',
         Blog: 'Blog',
-        hometitle: 'TUWAIQ',
+        home: 'TUWAIQ',
         abouttitle: 'About TUWAIQ',
         blogtitle: 'TUWAIQ Blog',
         clientstitle: 'TUWAIQ Clients',

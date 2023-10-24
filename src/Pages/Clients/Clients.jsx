@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom';
 import ImageComp from '../../Components/ImageComp/ImageComp';
 import SectionBg from '../../Components/SectionBg/SectionBg';
 import useLangContext from '../../Hooks/useLangContext';
-import SiteHelmet from './../../Components/SiteHelemt/SiteHelmet';
 
 
 
@@ -61,7 +60,6 @@ const Clients = () => {
 return (
     <>
     
-    <SiteHelmet title= {langs[lang].Titles.clientstitle}/>
     <SectionBg title= 'Our Clients'/>
 
     <section className='clients py-5'>
