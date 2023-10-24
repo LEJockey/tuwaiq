@@ -142,7 +142,7 @@ const Navbar = () => {
     
         </button>
 
-        <div className="offcanvas offcanvas-start" tabIndex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+        <div className={lang == 'en'? 'offcanvas offcanvas-start' : 'offcanvas offcanvas-end'} tabIndex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
             
             <div className="offcanvas-header justify-content-center">
 
@@ -232,5 +232,7 @@ const Navbar = () => {
 
   )
 }
+
+// "offcanvas offcanvas-start"
 
 export default Navbar
