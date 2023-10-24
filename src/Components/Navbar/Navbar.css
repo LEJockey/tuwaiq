@@ -159,7 +159,18 @@ nav .dropdown-item:hover{
 
     nav .nav-container .offcanvas-body .navbar-nav{
         height: 100%;
+        padding: 0;
         justify-content: center !important;
+    }
+
+    nav .nav-container .offcanvas-body .navbar-nav .nav-item{
+        display: flex;
+        justify-content: flex-start;
+        border-bottom: 1px solid var(--mainColor);
+    } 
+
+    nav .nav-container .offcanvas-body .navbar-nav .nav-item .nav-link{
+        border: 0 !important;
     }
 
     nav .nav-container .nav-item .nav-link{
