@@ -67,7 +67,7 @@ return (
             <form className='row' onSubmit={handleSubmit}>
 
                 {/* Name Input */}
-                <div className="form-floating my-2 col-sm-6 px-sm-1 px-0">
+                <div className="form-floating col-sm-6 px-sm-1 px-0">
                     <input type="text" 
                     className="form-control" 
                     id="floatingName" placeholder="Name" required 
@@ -81,7 +81,7 @@ return (
                 </div>
                 
                 {/* Email Imput */}
-                <div className="form-floating my-2 col-sm-6 px-sm-1 px-0">
+                <div className="form-floating col-sm-6 px-sm-1 px-0">
                     <input type="Email" 
                     className="form-control" 
                     id="floatingEmail" placeholder="Email" required 
