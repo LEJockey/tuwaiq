@@ -93,7 +93,7 @@ return (
 
             <h3>{langs[lang].ContactForm.add}</h3>
             <hr />
-            <form className='row form' onSubmit={handleSubmit}>
+            <form className='row' onSubmit={handleSubmit}>
 
                 {/* Name Input */}
                 <div className="form-floating my-2 col-sm-6 px-sm-1 px-0">
