@@ -1,0 +1,12 @@
+.blog-details{ 
+    color: var(--blogDetailsColor) !important;
+}
+
+.blog-details .blog-image{
+    height: 18rem !important;
+    width: 50%;
+}
+.form button{
+    background-color: var(--liteSecondColor) !important;
+    z-index: 1;
+}

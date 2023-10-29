@@ -3,11 +3,10 @@ import Slider from "react-slick";
 import {FaPlay} from 'react-icons/fa'
 import { Link } from 'react-router-dom'
 import { Fancybox } from "@fancyapps/ui";
-import { manufactureImg } from '../../data';
 import ImageComp from '../ImageComp/ImageComp';
 import useLangContext from '../../Hooks/useLangContext';
 
-const VideoComp = ({className='', location=''}) => {
+const VideoComp = ({videos, className='', location=''}) => {
 
     const {lang, langs} = useLangContext()
 
@@ -62,15 +61,14 @@ const VideoComp = ({className='', location=''}) => {
         
             <div className="row">
                 <Slider {...settings}>
-                {manufactureImg?.map(({img}, idx) => (
+                {videos?.map(({cover, vedio}, idx) => (
 
                 <div className='col-4 px-2' key={idx}>
 
-                    <a href="https://youtu.be/lracQihnrpk" data-fancybox="video-gallery" className='overlay-link'>
+                    <a href={vedio} data-fancybox="video-gallery" className='overlay-link'>
 
                         <div  className="custom-height position-relative shadowing rounded overflow-hidden Border cursor overlay-link z-1">
-                           {/* <img className="w-100 h-100 scale-img" height={250} src={img} alt= 'Manufacturing Images'/> */}
-                            <ImageComp src={img} alt= 'Manufacturing Images'/>
+                            <ImageComp src={cover} alt= 'Manufacturing Videos'/>
                 
                             <div className="overlay-img">
                                 <FaPlay className='icon z-3'/>

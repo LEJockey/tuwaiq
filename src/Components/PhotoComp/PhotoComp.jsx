@@ -1,11 +1,10 @@
 import React from 'react'
 import Slider from "react-slick";
 import { Link } from 'react-router-dom';
-import { manufactureImg } from '../../data';
 import ImageComp from '../ImageComp/ImageComp';
 import useLangContext from '../../Hooks/useLangContext';
 
-const PhotoComp = ({className= '', location= ''}) => {
+const PhotoComp = ({images, className= '', location= ''}) => {
 
     const {lang, langs} = useLangContext()
 
@@ -46,6 +45,7 @@ const PhotoComp = ({className= '', location= ''}) => {
         ]
     }
 
+
     return (
     <section className='photo-sec py-5'>
 
@@ -58,13 +58,13 @@ const PhotoComp = ({className= '', location= ''}) => {
                 
                 <Slider {...settings}>
             
-                {manufactureImg?.map(({img}, idx) => (
+                {images?.map(({image}, idx) => (
 
                 <div className='col-4 px-2' key={idx}>
 
                     <div className="custom-height position-relative shadowing rounded overflow-hidden Border">
                 
-                        <ImageComp  src={img}alt= 'Manufacturing Images' />
+                        <ImageComp src={image} alt= 'Manufacturing Images' />
                 
                     </div>
                     

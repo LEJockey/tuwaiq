@@ -6,7 +6,7 @@ import useLangContext from '../../Hooks/useLangContext';
 
 
 
-const Footer = () => {
+const Footer = ({contactDetails}) => {
 
   const {lang, langs} = useLangContext()
 
@@ -45,7 +45,6 @@ const Footer = () => {
                     
                       <li><Link className='d-inline-block' to="about">{langs[lang].Footer.AboutUs}</Link></li>
                       <li><Link className='d-inline-block' to="products">{langs[lang].Footer.services}</Link></li>
-                      {/* <li><Link className='d-inline-block' to="">News</Link></li> */}
                       <li><Link className='d-inline-block' to="blog">{langs[lang].Titles.Blog}</Link></li>
                       <li><Link className='d-inline-block' to="clients">{langs[lang].Titles.OurClients}</Link></li>
                   </ul>
@@ -56,9 +55,9 @@ const Footer = () => {
               <div className="widget">
                   <h5>{langs[lang].Footer.ContactInfo}</h5>
                   <div className="textwidget">
-                      <p>Riyadh 15228,<br/> Saudi Arabia</p>
-                      <p> 0544440399<br/>
-                      <a className='d-inline-block' href="mailto:twieaq@gmail.com">twieaq@gmail.com</a>
+                      <p>{contactDetails?.address[lang]},<br/>{langs[lang].Address.place}</p>
+                      <p> {contactDetails?.phones[1]}<br/> {contactDetails?.phones[2]}<br/>
+                      <a className='d-inline-block' href={`mailto:${contactDetails?.email}`}>{contactDetails?.email}</a>
                       </p>
                   </div>
               </div>

@@ -15,7 +15,7 @@
     color: var(--whiteColor);
 }
 
-form {
+.form {
     font-size: 14px;
 }
 
@@ -51,11 +51,7 @@ textarea{
     background-color: var(--liteSecondColor) !important;
 }
 
-.upload-input{
-    color: var(--mainColor) !important;
-}
-
-form button{
+.form button{
     letter-spacing: 1px;
     text-transform: uppercase;
     font-weight: 900 !important;
@@ -63,7 +59,7 @@ form button{
     padding: 16px 20px;
     border-color: var(--whiteColor) !important;
 }
-form button::before {
+.form button::before {
     background-color: var(--mainColor) !important;
 }
 

@@ -1,7 +1,7 @@
 import React from 'react'
 import './clients.css'
 import Slider from "react-slick";
-import { ourClients } from '../../data';
+
 import { Link } from 'react-router-dom';
 import ImageComp from '../../Components/ImageComp/ImageComp';
 import SectionBg from '../../Components/SectionBg/SectionBg';
@@ -10,7 +10,7 @@ import useLangContext from '../../Hooks/useLangContext';
 
 
 
-const Clients = () => {
+const Clients = ({clients}) => {
 
     const {lang, langs} = useLangContext()
 
@@ -69,17 +69,13 @@ return (
 
             <div className="row px-5">
                 <Slider {...settings}>
-                {ourClients?.map(({img}, idx) => (
+                {clients?.map((client, idx) => (
 
                     <div className='px-xxl-5 px-4' key={idx}>
                         
                         <div key={idx} className="small-height rounded overflow-hidden Border position-relative">
-                            {/* <img
-                            className="w-100 h-100"
-                            src={img}
-                            alt= 'Our Clients'
-                            /> */}
-                            <ImageComp src={img}
+                            
+                            <ImageComp src={client?.image}
                             alt= 'Our Clients'/>
                         
                         </div>
@@ -88,14 +84,6 @@ return (
                 </Slider>
 
             </div>
-            
-            {/* <div className='text-end px-4 mt-3'>
-                <button className='btn main-bg text-white rounded me-2'>
-                    <Link className=' text-decoration-none text-white'  to= '' >
-                    Discover More
-                    </Link>
-                </button>
-            </div> */}
         </div>
     </section>
     </>

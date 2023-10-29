@@ -45,7 +45,10 @@ export const en = {
         email: 'Email*',
         phone: 'Phone*',
         message: 'Message*',
-        submit: 'Submit'
+        comment: 'Comment*',
+        submit: 'Submit',
+        add: 'Add Comment',
+        comments: 'Comments'
     },
     Footer: {
         desc: 'Installation and supply of natural stone for palaces, villas and buildings - we prepare designs according to the appropriate dimensions of natural stone facades. We provide all types of natural stone using the latest methods used and guaranteed.',
@@ -59,8 +62,17 @@ export const en = {
         view: 'View all',
         download: 'Download profile'
     },
-    Network: {
-        connection: '!Check your network connection ',
+    Date: {
+        month: 'Months',
+        week: 'Weeks'
+    },
+    Address: {
+        place: 'Saudi Arabia'
+    },
+    successMsg: {
+        com: 'Comment is Published Successfully',
+        msg: 'Message is Sent Successfully'
+
     }
 }
 

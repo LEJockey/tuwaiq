@@ -5,11 +5,11 @@ import { Link } from 'react-router-dom'
 import aboutImg from '../../assests/home/about-home.png'
 import ImageComp from '../ImageComp/ImageComp'
 import useLangContext from '../../Hooks/useLangContext'
-const AboutUs = ({className= '',location= ''}) => {
+const AboutUs = ({aboutUs, className= '',location= '', getName='', getDesc=''}) => {
 
     const {lang, langs} = useLangContext()
     
-  return (
+return (
     <section className='about-home position-relative py-5'>
 
     <div className="container-lg pb-5">
@@ -18,16 +18,11 @@ const AboutUs = ({className= '',location= ''}) => {
                 
                 <div>
                     {/* About Us Title */}
-                    <h1 className='text-center mb-5'> <span className='custom-head'>{langs[lang].AboutUS.aboutTitle}</span> </h1>
+                    <h1 className='text-center mb-5'> <span className='custom-head'>{aboutUs?.name[lang]}</span> </h1>
 
                     {/* About Us Desc */}
                     <p className=' text-center'>
-                        
-                        Tuwaiq Industrial Factory extracts, cuts and shapes natural stone used in building and construction through several processes starting from
-                        Extracting the stone, cutting it, cleaning it, and designing it according to aesthetic drawings. We also provide most types of natural stone with the latest technologies
-                        It is used according to the appropriate sizes and designs for the facades of villas, houses and buildings. We welcome cooperation with construction companies
-                        We offer them natural stones that are distinguished by their quality, shape and distinctive design
-            
+                        {aboutUs?.description[lang]}
                     </p>
                     
                     {/* Buttons */}
@@ -59,7 +54,7 @@ const AboutUs = ({className= '',location= ''}) => {
             <div className="col-md-6 d-flex justify-content-center align-items-center mt-4 mt-md-0">
                 <Link className='overlay-link'>
                     <div className='p-3 position-relative shadowing z-1 bg-white rounded overflow-hidden'>
-                        <ImageComp src={aboutImg} alt= 'About US' />
+                        <ImageComp src={aboutUs?.image} alt= 'About US' />
                         <div className="overlay-img">
                             <FaPlay className='icon z-3'/>
                         </div>

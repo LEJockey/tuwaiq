@@ -3,9 +3,6 @@ import './App.css'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import Home from './Pages/Home/Home';
 import Products from './Pages/Products/Products';
-// import About from './Pages/About/About';
-// import Projects from './Pages/Projects/Projects';
-// import NaturalStone from './Pages/NaturalStone/NaturalStone';
 import Blog from './Pages/Blog/Blog';
 import ContactUs from './Pages/ContactUs/ContactUs';
 import Layout from './Components/Layout/Layout';
@@ -15,19 +12,28 @@ import Videos from './Pages/Videos/Videos';
 import { SkeletonTheme } from 'react-loading-skeleton';
 import Clients from './Pages/Clients/Clients';
 import LangContextProvider from './Context/LangContext';
-// import Dashboard from './Dashboard/Dashboard';
+import useQueryData from './Hooks/useQueryData';
+import BlogDetails from './Pages/BlogDetails/BlogDetails';
+import useLangContext from './Hooks/useLangContext';
+import axios from 'axios';
 const LazyAbout = React.lazy(() => import ('./Pages/About/About'));
 const LazyProjects = React.lazy(() => import ('./Pages/Projects/Projects'))
-const LazyNaturalStone = React.lazy(() => import ('./Pages/NaturalStone/NaturalStone'))
-
 
 
 const App = () => {
 
+  const {lang} = useLangContext()
+  let {data} = useQueryData('https://tuwaiq.ezdhaar.com/public/api/contact/edit', 'GET', 'contactdetails')
+  
+  const contactDetails = data?.data.data
+  
+
+
+
   const router = createBrowserRouter([
     { 
     path: '', 
-    element: <Layout/>, 
+    element: <Layout contactDetails={contactDetails}/>, 
     children: [
       {path: '', element: <Home/>},
       {path: 'about', element: <React.Suspense> <LazyAbout/> </React.Suspense>},
@@ -38,20 +44,19 @@ const App = () => {
       {path: 'blog', element: <Blog/>},
       {path: 'contactus', element: <ContactUs/>},
       {path: 'clients', element: <Clients/>},
-      {path: 'naturalstone', element: <React.Suspense> <LazyNaturalStone/> </React.Suspense>},
+      {path: 'blogdetails/:id', element: <BlogDetails/>},
       {path: '*', element: <NotFound/>}
   ]},
-  // {path: 'dashboard', element: <Dashboard/>}
 ])
   return (
     <>
-    <LangContextProvider>
+    
 
       <SkeletonTheme baseColor="#C6A467" highlightColor="#B86C0C">
           <RouterProvider router={router}/>
       </SkeletonTheme>
 
-    </LangContextProvider>
+  
     </>
   )
 }

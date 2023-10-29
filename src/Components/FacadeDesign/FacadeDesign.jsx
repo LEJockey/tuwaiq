@@ -1,20 +1,17 @@
 import React from 'react'
-import { facadeDesign } from '../../data'
 import { Link } from 'react-router-dom'
-import {HiOutlineViewfinderCircle} from 'react-icons/hi2'
-import { Fancybox } from "@fancyapps/ui";
-import ImageComp from '../ImageComp/ImageComp';
+
+
 import useLangContext from '../../Hooks/useLangContext';
+import Display from '../Display/Display';
 
 
-const FacadeDesign = ({className='', location=''}) => {
+const FacadeDesign = ({className='', location='', facadeDesign}) => {
     
     const {lang, langs} = useLangContext()
 
     
-    Fancybox.bind("[data-fancybox]", {
-        
-    });
+    
 
 return (
 
@@ -23,21 +20,7 @@ return (
 
             {/* <h1 className='text-center mb-5'> <span className='custom-head'>External facade designs</span> </h1> */}
 
-            <div className="row ">
-                {facadeDesign.map(({img}, idx)=>
-                    <div className="col-sm-6 col-md-4 col-lg-3 mb-4" key={idx}>
-                        <a href={img} className='overlay-link' data-fancybox="gallery" data-caption="Facade Designs">
-                        <div className='custom-height position-relative shadowing rounded overflow-hidden Border cursor z-1'>
-
-                            <ImageComp src={img} alt="Facade Designs"/>
-                            <div className="overlay-img">
-                                <HiOutlineViewfinderCircle className='icon z-3'/>
-                            </div> 
-                        </div>
-                        </a>
-                    </div>
-                )}
-            </div>
+            <Display items={facadeDesign} hideVideoIcon='hideVideoIcon' />
 
 
             <div className='d-flex justify-content-end mt-3' >

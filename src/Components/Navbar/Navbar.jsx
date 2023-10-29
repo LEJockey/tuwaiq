@@ -2,24 +2,26 @@ import React, { useContext } from 'react'
 import './Navbar.css'
 import { Link, NavLink } from 'react-router-dom'
 import logo from '../../assests/logo-navbar.png'
-import {FiFacebook} from 'react-icons/fi'
-import {FaXTwitter} from 'react-icons/fa6'
 import {IoCallOutline} from 'react-icons/io5'
-import {AiOutlineProfile, AiOutlineMail, AiOutlineYoutube, AiOutlineInstagram} from 'react-icons/ai'
+import {AiOutlineProfile, AiOutlineMail} from 'react-icons/ai'
 import arImg from '../../assests/Ar.png'
 import enImg from '../../assests/uk.png'
 import { langContext } from '../../Context/LangContext'
 
+// new icons
+import {FaXTwitter} from 'react-icons/fa6'
+import {BiLogoFacebook} from 'react-icons/bi'
+import {AiFillYoutube} from 'react-icons/ai'
+import {FaInstagram} from 'react-icons/fa6'
 
-const Navbar = () => {
+
+const Navbar = ({contactDetails}) => {
 
     const {lang, setLang, langs} = useContext(langContext) 
     function changLang() {
         lang == 'ar'? setLang('en'): setLang('ar')
     }
-
     
-
     return (
     <>
     
@@ -54,18 +56,18 @@ const Navbar = () => {
                 rel= 'noreferrer'
             >
                 <span className='second-color d-inline-block mx-0 mx-md-1'><IoCallOutline/></span>
-                0544440399
+                {contactDetails?.phones[1]}
             </a>
 
             {/* Mail */}
             <a 
                 className= 'd-inline-block text-decoration-none second-color mx-1 mx-sm-2 mx-md-3' 
-                href=' '
+                href={`mailto:${contactDetails?.email}`}
                 target= '_blank'
                 rel= 'noreferrer'
             >
                 <span className='second-color d-inline-block mx-0 mx-md-1'><AiOutlineMail/></span>
-                twieaq@gmail.com
+                {contactDetails?.email}
             </a>
         </div>
 
@@ -75,31 +77,31 @@ const Navbar = () => {
             {/* Twitter */}
             <a 
                 className= 'd-inline-block text-decoration-none second-color me-1 me-sm-2 me-md-3' 
-                href=' '
+                href="https://twitter.com/TwiEaq"
                 target= '_blank'
                 rel= 'noreferrer' 
             >
-                <span className='second-color d-inline-block me-0 me-md-1'><FaXTwitter/></span>
+                <span className='second-color d-inline-block me-0 me-md-1'><FaXTwitter className='twitter'/></span>
             </a>
             
             {/* Facebook */}
             <a 
                 className= 'd-inline-block text-decoration-none second-color me-1 me-sm-2 me-md-3' 
-                href=' '
+                href="https://www.facebook.com/profile.php?id=100091126996704"
                 target= '_blank'
                 rel= 'noreferrer' 
             >
-                <span className='second-color d-inline-block me-0 me-md-1'><FiFacebook/></span>
+                <span className='second-color d-inline-block me-0 me-md-1'><BiLogoFacebook className='facebook'/></span>
             </a>
             
             {/* Youtube */}
             <a 
                 className= 'd-inline-block text-decoration-none second-color me-1 me-sm-2 me-md-3' 
-                href=' '
+                href="https://www.youtube.com/channel/UCJwMNj48tFq0szH0LZSmDRA"
                 target= '_blank'
                 rel= 'noreferrer' 
             >
-                <span className='second-color d-inline-block me-0 me-md-1'><AiOutlineYoutube/></span>
+                <span className='second-color d-inline-block me-0 me-md-1'><AiFillYoutube className='youtube'/></span>
             </a>
             
             {/* Instagram */}
@@ -109,7 +111,7 @@ const Navbar = () => {
                 target= '_blank'
                 rel= 'noreferrer' 
             >
-                <span className='second-color d-inline-block me-0 me-md-1'><AiOutlineInstagram/></span>
+                <span className='second-color d-inline-block me-0 me-md-1'><FaInstagram className='instagram'/></span>
             </a>
             
             {/* Language */}

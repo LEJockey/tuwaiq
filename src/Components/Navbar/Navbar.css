@@ -57,6 +57,33 @@ nav{
     }
 }
 
+/* Handling hovering color on Social Media Icons */
+.facebook, .youtube, .instagram, .twitter{
+    color: var(--secondColor);
+    transition: all .3s;
+}
+.facebook:hover, .youtube:hover, .instagram:hover, .twitter:hover{ 
+    transform: scale(1.2);
+}
+.facebook:hover{
+    color: #0866ff;
+}
+
+.youtube:hover {
+    color: #ff0000;
+}
+
+.instagram:hover{
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    color: var(--whiteColor);
+    border-radius: 20%;
+}
+
+.twitter:hover{
+    color: #000000;
+}
+
+
 
 /* ====================================================== */
 nav .navbar-brand img{

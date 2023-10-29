@@ -13,6 +13,7 @@
   --medSecondColor:rgba(0, 46, 91, .7);
   --whiteColor: #fff;
   --blackColor: #000;
+  --blogDetailsColor: #797979;
 }
 html{
   scroll-behavior: smooth;
@@ -51,6 +52,9 @@ body {
 }
 .white-bg{
   background-color: #fff !important;
+}
+.lite-bg{
+  background-color: var(--liteSecondColor);
 }
 
 /* Cursor Event */
@@ -308,10 +312,20 @@ html[dir='rtl'] .custom-btn:hover::before{
   display: block !important;
 }
 
+/* Custom hide Icons Images & Videos*/
+.hideImgIcon, .hideVideoIcon{
+  display: none !important;
+}
+
+/* Custom z-index */
+.index{
+  z-index: 99 !important;
+}
+
 /* Handling position of Wifi Off Icon */
 .custom-position{
   position: fixed !important;
-  bottom: 2%;
+  bottom: 10px;
   width: 100%;
   margin: 0 -10px !important;
   z-index: 99999999 !important;
@@ -328,6 +342,46 @@ html[dir='rtl'] .custom-btn:hover::before{
     opacity: 100;
   }
 }
+/* Handling Blog Details  */
+.blog-details .section-bg{
+  height: 50vh !important;
+}
+
+
+.blog-details .blog-date .article-title::before, .blog-details .blog-date .article-title::after{
+    content: "";
+    position: absolute !important;
+    width: 8px !important;
+    height: 8px !important;
+    background-color: var(--goldheadBG) !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    border-radius: 50% !important;
+}
+
+.blog-details .blog-date .article-title::before{
+  left: -10% !important;
+}
+
+.blog-details .blog-date .article-title::after{
+  right: -10% !important;
+}
+
+.success-msg {
+  transition: opacity 2s ease-in-out;
+  opacity: 1;
+}
+
+.success-msg.hidden {
+  transition: opacity 2s ease-in-out;
+  opacity: 0;
+}
+
+
+
+
+
+
 
 
 

@@ -10,7 +10,8 @@ import BackToTopBtn from './../BackToTopBtn/BackToTopBtn';
 import useLangContext from '../../Hooks/useLangContext';
 
 
-const Layout = () => {
+const Layout = ({contactDetails}) => {
+
 
     const {lang, langs} = useLangContext()
 
@@ -18,13 +19,13 @@ const Layout = () => {
 
     <div>
 
-        <Navbar/>
+        <Navbar contactDetails = {contactDetails}/>
 
         <Outlet></Outlet> 
         
         <BackToTopBtn/>
 
-        <Footer/>
+        <Footer contactDetails= {contactDetails}/>
         {/* <ContactBoxes/> */}
 
         <Offline>
