@@ -7,6 +7,8 @@ import { useParams } from 'react-router-dom';
 import useQueryData from '../../Hooks/useQueryData';
 import {GrStatusGood} from 'react-icons/gr'
 import axios from 'axios';
+import SiteHelmet from '../../Components/SiteHelemt/SiteHelmet';
+import LoadingComp from '../../Components/LoadingComp/LoadingComp';
 
 const BlogDetails = () => {
     
@@ -19,7 +21,7 @@ const BlogDetails = () => {
     const [submissionStatus, setSubmissionStatus] = useState(false);
     
 
-    let {data} = useQueryData(`https://tuwaiq.ezdhaar.com/public/api/blog/show/${id}`, 'GET', 'blogdetails')
+    let {data, isLoading} = useQueryData(`https://tuwaiq.ezdhaar.com/public/api/blog/show/${id}`, 'GET', 'blogdetails')
     const commentsCount =  data?.data.count
     const blogDetails = data?.data.blog
     const blogComments = data?.data.blog.comments
@@ -65,6 +67,10 @@ const BlogDetails = () => {
     }
 
 return (
+    <>
+    {isLoading? <LoadingComp/> : 
+    <>
+    <SiteHelmet title={blogDetails?.name[lang]}/>
     <section className='blog-details'> 
     <SectionBg title= {blogDetails?.name[lang]}/>
         <div className="container py-5">
@@ -156,6 +162,9 @@ return (
             
         </div>
     </section>
+    </>}
+    </>
+    
 )
 }
 
