@@ -66,7 +66,8 @@ return (
 
             <form className='row' onSubmit={handleSubmit}>
 
-                {/* Name Input */}
+                <div>
+                    {/* Name Input */}
                 <div className="form-floating my-2 col-sm-6 px-sm-1 px-0">
                     <input type="text" 
                     className="form-control" 
@@ -92,6 +93,7 @@ return (
                     >
                     {langs[lang].ContactForm.email}
                     </label>
+                </div>
                 </div>
                 
                 {/* Phone Input */}
