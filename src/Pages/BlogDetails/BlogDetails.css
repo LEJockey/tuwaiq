@@ -6,7 +6,7 @@
     height: 18rem !important;
     width: 50%;
 }
-.form button{
+form button{
     background-color: var(--liteSecondColor) !important;
     z-index: 1;
 }
