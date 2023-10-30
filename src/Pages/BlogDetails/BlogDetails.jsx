@@ -19,6 +19,7 @@ const BlogDetails = () => {
     const [comments, setComments] = useState('')
     const [blog_id, setBlog_id] = useState(id)
     const [submissionStatus, setSubmissionStatus] = useState(false);
+    const [reload, setReload] = useState(false);
     
 
     let {data, isLoading} = useQueryData(`https://tuwaiq.ezdhaar.com/public/api/blog/show/${id}`, 'GET', 'blogdetails')
@@ -28,12 +29,15 @@ const BlogDetails = () => {
     
 
     
-    const   handleSubmit = (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault();
         setBlog_id(id)
+        const created_at = new Date()
         const commentDetails = {blog_id, name, email, comments}
+        const newComment = {name, email, comments, created_at}
         axios.post('https://tuwaiq.ezdhaar.com/public/api/comment/store', commentDetails)
         .then((response) => {console.log(response)
+            console.log (newComment)
         setSubmissionStatus(true)})
         .catch((error) => {
             console.log(error);
@@ -43,20 +47,28 @@ const BlogDetails = () => {
         setName('');
         setEmail('');
         setComments(''); 
-        window.location.reload()
+        
     }
 
     useEffect(() => {
         // Reset submission status after a delay
         if (submissionStatus) {
 
-          const timer = setTimeout(() => {
+        const timer = setTimeout(() => {
             setSubmissionStatus(false);
-          }, 3000);
-    
-          return () => clearTimeout(timer);
+            setReload(true);
+        }, 3000);
+        
+        return () => clearTimeout(timer);
         }
-      }, [submissionStatus]);
+    }, [submissionStatus]);
+
+    useEffect(() => {
+        if (reload) {
+          setReload(false);
+          window.location.reload(); // Reload the component
+        }
+      }, [reload]);
 
     // Function to convert Date string to default date
     function formatCommentDate(dateString) {
@@ -170,3 +182,6 @@ return (
 }
 
 export default BlogDetails
+
+
+// window.location.reload()
