@@ -76,6 +76,7 @@ return (
         <div className="container py-5">
 
             <div className="blog-image mb-1 rounded Border shadowing overflow-hidden">
+                
 
                 <ImageComp src={blogDetails?.image}/>
 
