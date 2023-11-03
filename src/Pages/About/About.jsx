@@ -25,8 +25,6 @@ const About = () => {
     const allTeam = data?.data.allteam
 
 
-
-
   return (
     <>
     {isLoading? <LoadingComp/> :

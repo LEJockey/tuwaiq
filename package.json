@@ -10,6 +10,7 @@
     "animate.css": "^4.1.1",
     "axios": "^1.5.1",
     "bootstrap": "^5.3.2",
+    "devtools-detect": "^4.0.1",
     "react": "^18.2.0",
     "react-detect-offline": "^2.4.5",
     "react-dom": "^18.2.0",

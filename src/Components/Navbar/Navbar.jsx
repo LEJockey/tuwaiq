@@ -8,7 +8,7 @@ import arImg from '../../assests/Ar.png'
 import enImg from '../../assests/uk.png'
 import { langContext } from '../../Context/LangContext'
 
-// new icons
+// Social icons
 import {FaXTwitter} from 'react-icons/fa6'
 import {BiLogoFacebook} from 'react-icons/bi'
 import {AiFillYoutube} from 'react-icons/ai'

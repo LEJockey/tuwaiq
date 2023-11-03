@@ -1,6 +1,7 @@
-import React, { useEffect } from 'react'
+import React, { useEffect} from 'react'
 import './App.css'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
+import { devtoolsDetect } from 'devtools-detect';
 import Home from './Pages/Home/Home';
 import Products from './Pages/Products/Products';
 import Blog from './Pages/Blog/Blog';
@@ -11,14 +12,11 @@ import Photos from './Pages/Photos/Photos';
 import Videos from './Pages/Videos/Videos';
 import { SkeletonTheme } from 'react-loading-skeleton';
 import Clients from './Pages/Clients/Clients';
-import LangContextProvider from './Context/LangContext';
 import useQueryData from './Hooks/useQueryData';
 import BlogDetails from './Pages/BlogDetails/BlogDetails';
 import useLangContext from './Hooks/useLangContext';
-import axios from 'axios';
 const LazyAbout = React.lazy(() => import ('./Pages/About/About'));
-const LazyProjects = React.lazy(() => import ('./Pages/Projects/Projects'))
-
+const LazyProjects = React.lazy(() => import ('./Pages/Projects/Projects'));
 
 const App = () => {
 
@@ -26,7 +24,20 @@ const App = () => {
   let {data} = useQueryData('https://tuwaiq.ezdhaar.com/public/api/contact/edit', 'GET', 'contactdetails')
   
   const contactDetails = data?.data.data
+
+  // function stopInspect() {
+  //   debugger;
+  //   setInterval(function() {
+  //     if (devtoolsDetect) {
+  //       window.location.href = "https://www.google.com";
+  //     }
+  //   }, 1000);
+  // }
+
   
+  
+
+
   useEffect(() => {
     const handleContextMenu = (e) => {
       e.preventDefault();
@@ -37,7 +48,7 @@ const App = () => {
         return e.ctrlKey && e.shiftKey && e.keyCode === keyCode.charCodeAt(0);
       }
 
-      // Disable F12, Ctrl + Shift + I, Ctrl + Shift + J, Ctrl + U
+      
       if (
         e.keyCode === 123 ||
         ctrlShiftKey(e, 'I') ||
@@ -48,15 +59,24 @@ const App = () => {
         e.preventDefault();
       }
     };
+    
+    // stopInspect()
 
     document.addEventListener('contextmenu', handleContextMenu);
     document.addEventListener('keydown', handleKeyDown);
-
     return () => {
       document.removeEventListener('contextmenu', handleContextMenu);
       document.removeEventListener('keydown', handleKeyDown);
     };
+
+    
+  
   }, []);
+
+  
+
+  
+
 
 
   const router = createBrowserRouter([
@@ -79,6 +99,7 @@ const App = () => {
 ])
   return (
     <>
+    
     
 
       <SkeletonTheme baseColor="#C6A467" highlightColor="#B86C0C">
