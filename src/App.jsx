@@ -28,36 +28,36 @@ const App = () => {
 
   const contactDetails = data?.data.data;
 
-  useEffect(() => {
-    const handleContextMenu = (e) => {
-      e.preventDefault();
-    };
+  // useEffect(() => {
+  //   const handleContextMenu = (e) => {
+  //     e.preventDefault();
+  //   };
 
-    const handleKeyDown = (e) => {
-      function ctrlShiftKey(e, keyCode) {
-        return e.ctrlKey && e.shiftKey && e.keyCode === keyCode.charCodeAt(0);
-      }
+  //   const handleKeyDown = (e) => {
+  //     function ctrlShiftKey(e, keyCode) {
+  //       return e.ctrlKey && e.shiftKey && e.keyCode === keyCode.charCodeAt(0);
+  //     }
 
-      if (
-        e.keyCode === 123 ||
-        ctrlShiftKey(e, "I") ||
-        ctrlShiftKey(e, "J") ||
-        ctrlShiftKey(e, "C") ||
-        (e.ctrlKey && e.keyCode === "U".charCodeAt(0))
-      ) {
-        e.preventDefault();
-      }
-    };
+  //     if (
+  //       e.keyCode === 123 ||
+  //       ctrlShiftKey(e, "I") ||
+  //       ctrlShiftKey(e, "J") ||
+  //       ctrlShiftKey(e, "C") ||
+  //       (e.ctrlKey && e.keyCode === "U".charCodeAt(0))
+  //     ) {
+  //       e.preventDefault();
+  //     }
+  //   };
 
-    // stopInspect()
+  //   // stopInspect()
 
-    document.addEventListener("contextmenu", handleContextMenu);
-    document.addEventListener("keydown", handleKeyDown);
-    return () => {
-      document.removeEventListener("contextmenu", handleContextMenu);
-      document.removeEventListener("keydown", handleKeyDown);
-    };
-  }, []);
+  //   document.addEventListener("contextmenu", handleContextMenu);
+  //   document.addEventListener("keydown", handleKeyDown);
+  //   return () => {
+  //     document.removeEventListener("contextmenu", handleContextMenu);
+  //     document.removeEventListener("keydown", handleKeyDown);
+  //   };
+  // }, []);
 
   const router = createBrowserRouter([
     {
