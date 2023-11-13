@@ -1,5 +1,4 @@
-import React from "react";
-import "./Home.css";
+import React, { useEffect } from "react";
 import ContactForm from "../../Components/ContactForm/ContactForm";
 import GoldHead from "../../Components/GoldHead/GoldHead";
 import DakHead from "../../Components/DarkHead/DakHead";
@@ -15,8 +14,12 @@ import useLangContext from "../../Hooks/useLangContext";
 import SiteHelmet from "../../Components/SiteHelemt/SiteHelmet";
 import useQueryData from "../../Hooks/useQueryData";
 import LoadingComp from "./../../Components/LoadingComp/LoadingComp";
+import "./Home.css";
+import Slider from "react-slick";
 
 const Home = () => {
+
+
   const { lang, langs } = useLangContext();
 
   // Fetching Home Data
@@ -27,6 +30,8 @@ const Home = () => {
     "Home"
   );
 
+  
+
   const allSliders = data?.data?.allsliders;
   const manufacturingImages = data?.data.Manufacturingimages;
   const manufacturingVideos = data?.data.videosandcovers;
@@ -35,6 +40,7 @@ const Home = () => {
   const clients = data?.data.Clients;
   const latestBlogs = data?.data.latestBlogs;
   const aboutUs = data?.data.about;
+  console.log (allSliders)
 
   return (
     <>
@@ -45,54 +51,57 @@ const Home = () => {
           <SiteHelmet title={langs[lang].Titles.home} />
 
           {/* Carousel Section */}
+          
           <section
-            id="carouselExampleFade"
-            className="carousel slide carousel-fade z-1 custom-padding"
-            data-bs-ride="carousel"
-          >
-            {/* Carousel Ovelay */}
-            <div className="overlay "></div>
+                      id="carouselExampleFade"
+                      className="carousel slide carousel-fade z-1 custom-padding"
+                      data-bs-ride="carousel"
+                  >
+          
+                      <div className="carousel-indicators z-3">
+                          {allSliders?.map((slide, index) => (
+                              <button
+                                  key={index}
+                                  type="button"
+                                  data-bs-target="#carouselExampleFade"
+                                  data-bs-slide-to={index}
+                                  className={
+                                      index === 0
+                                          ? "active rounded-circle"
+                                          : "rounded-circle"
+                                  }
+                                  aria-label={`Slide ${index + 1}`}
+                              ></button>
+                          ))}
+                      </div>
 
-            {/* Carousel-Indicators */}
-            <div className="carousel-indicators z-3">
-              {allSliders?.map((slide, index) => (
-                <button
-                  key={slide.id}
-                  type="button"
-                  data-bs-target="#carouselExampleFade"
-                  data-bs-slide-to={index}
-                  className={
-                    index === 0 ? "active rounded-circle" : "rounded-circle"
-                  }
-                  aria-current={index === 0 ? "Slide 1" : undefined}
-                  aria-label={`Slide ${index + 1}`}
-                ></button>
-              ))}
-            </div>
+                      {/* Slider Content */}
+                      <div className="carousel-inner h-100 z-2">
+                          {allSliders?.map((slide, index) => (
+                              <div
+                                  key={index}
+                                  className={`carousel-item ${
+                                      index === 0 ? "active" : ""
+                                  } h-100 position-relative d-flex justify-content-center align-items-center`}
+                                  data-bs-slide="fade"
+                                  data-bs-interval={5000}
+                              >
+                                  <div className="overlay z-2"></div>
+                                  <ImageComp
+                                      src={slide.image}
+                                      alt={slide.title}
+                                  />
+                                  <div className="carousel-caption d-flex justify-content-center align-items-center z-3">
+                                      <div>
+                                          <h1>{getTitle(slide)}</h1>
+                                          <p>{getDesc(slide)}</p>
+                                      </div>
+                                  </div>
+                              </div>
+                          ))}
+                      </div>
+                  </section>
 
-            {/* Slider Content */}
-            <div className="carousel-inner h-100 z-2">
-              {allSliders?.map((slide) => (
-                <div
-                  key={slide.id}
-                  className={`carousel-item ${
-                    slide.id === 1 ? "active" : ""
-                  } h-100 position-relative d-flex justify-content-center align-items-center`}
-                  data-bs-slide="fade"
-                  data-bs-interval="5000"
-                >
-                  <div className="overlay z-2"></div>
-                  <ImageComp src={slide.image} alt={slide.title} />
-                  <div className="carousel-caption d-flex justify-content-center align-items-center z-3">
-                    <div>
-                      <h1>{getTitle(slide)}</h1>
-                      <p>{getDesc(slide)}</p>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </section>
 
           {/* About Home Section */}
           <AboutUs
